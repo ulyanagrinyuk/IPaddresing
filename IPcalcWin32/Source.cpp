@@ -29,7 +29,7 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		//MessageBox(hwnd, "IP address changed", "Info", MB_OK);
 		HWND hIPaddress = GetDlgItem(hwnd, IDC_IPADDRESS);
 		HWND hIPmask = GetDlgItem(hwnd, IDC_IPMASK);
-		HWND hEditPrefix = GetDlgItem(hwnd, IDC_EDIT_PREFIX);
+		HWND hEditPrefix = GetDlgItem(hwnd, IDC_SPIN_PREFIX);
 		HWND hStaticInfo = GetDlgItem(hwnd, IDC_STATIC_INFO);
 		switch (wParam)
 		{
