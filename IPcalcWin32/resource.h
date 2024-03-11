@@ -3,10 +3,10 @@
 // Used by Resource.rc
 //
 #define IDD_DIALOG1                     101
-#define IDC_SPIN_IPADDRESS              1001
 #define IDC_IPADDRESS                   1001
 #define IDC_SPIN_PREFIX                 1002
 #define IDC_IPADDRESS1                  1006
+#define IDC_IPMASK                      1006
 #define IDC_IPADDRESS2                  1007
 #define IDC_STATIC_INFO                 1009
 
