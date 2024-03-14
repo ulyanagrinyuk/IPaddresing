@@ -12,6 +12,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TCPserver", "TCPserver\TCPs
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TCPclient", "TCPclient\TCPclient.vcxproj", "{5F733749-1592-40AB-B344-55272B088F13}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinSocketChat", "WinSocketChat\WinSocketChat.vcxproj", "{79B728AE-5D17-491B-80CB-B33C1438545C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -44,6 +46,14 @@ Global
 		{5F733749-1592-40AB-B344-55272B088F13}.Release|x64.Build.0 = Release|x64
 		{5F733749-1592-40AB-B344-55272B088F13}.Release|x86.ActiveCfg = Release|Win32
 		{5F733749-1592-40AB-B344-55272B088F13}.Release|x86.Build.0 = Release|Win32
+		{79B728AE-5D17-491B-80CB-B33C1438545C}.Debug|x64.ActiveCfg = Debug|x64
+		{79B728AE-5D17-491B-80CB-B33C1438545C}.Debug|x64.Build.0 = Debug|x64
+		{79B728AE-5D17-491B-80CB-B33C1438545C}.Debug|x86.ActiveCfg = Debug|Win32
+		{79B728AE-5D17-491B-80CB-B33C1438545C}.Debug|x86.Build.0 = Debug|Win32
+		{79B728AE-5D17-491B-80CB-B33C1438545C}.Release|x64.ActiveCfg = Release|x64
+		{79B728AE-5D17-491B-80CB-B33C1438545C}.Release|x64.Build.0 = Release|x64
+		{79B728AE-5D17-491B-80CB-B33C1438545C}.Release|x86.ActiveCfg = Release|Win32
+		{79B728AE-5D17-491B-80CB-B33C1438545C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
