@@ -1,6 +1,6 @@
 #include<iostream>
-#include<WS2atm.h>
-#include<WinSock2.h>
+#include<WS2tcpip.h> 
+#include<WinSock2.h> 
 
 #pragma comment(lib, "WS2_32.lib")
 
@@ -9,16 +9,11 @@ using namespace std;
 void main()
 {
 	setlocale(LC_ALL, "");
-	const int MAXSTRLEN = 255;
+
+	SOCKET _socket; 
+	sockaddr_in addr; 
 
 	WSADATA wsaData;
-
-	SOCKET _socket;
-
-	//SOCKET accept_socket;
-
-	sockaddr_in addr;
-
 	WSAStartup(MAKEWORD(2, 2), &wsaData);
 	_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 	addr.sin_family = AF_INET;
@@ -28,7 +23,9 @@ void main()
 	listen(_socket, 1);
 	cout << "Server started" << endl;
 
+	
 	SOCKET accept_socket = accept(_socket, NULL, NULL);
+	const int MAXSTRLEN = 255;
 	char buffer[MAXSTRLEN] = {};
 	int i = recv(accept_socket, buffer, MAXSTRLEN, 0);
 	cout << buffer << endl;

@@ -1,7 +1,9 @@
 #include "Socket.h"
 
+
 Socket::Socket()
 {
+
 	if (WSAStartup(MAKEWORD(2, 2), &wsaData) != NO_ERROR)
 	{
 		cerr << "WSAStartup error" << endl;
@@ -16,22 +18,23 @@ Socket::Socket()
 		system("PAUSE");
 		WSACleanup();
 		exit(11);
-
 	}
 }
-
+Socket::Socket(string username):Socket()
+{
+	this->username = username;
+}
 Socket::~Socket()
 {
 	WSACleanup();
 }
-
 bool Socket::SendData(char* buffer)
 {
 	send(_socket, buffer, strlen(buffer), 0);
 	return true;
 }
 
-bool Socket::ReceveData(char* buffer, int size)
+bool Socket::ReceiveData(char* buffer, int size)
 {
 	INT i = recv(_socket, buffer, size, 0);
 	return true;
@@ -39,14 +42,20 @@ bool Socket::ReceveData(char* buffer, int size)
 
 void Socket::CloseConnection()
 {
+	cout << "Connection closing....." << endl;
 	closesocket(_socket);
 }
 
-void Socket::SendDataMessage()
+CONST CHAR* Socket::SendDataMessage()
 {
 	CHAR message[MAXSTRLEN]{};
-	cout << "Enter message: ";
-	cin.get(message, MAXSTRLEN);
+	CHAR buffer[MAXSTRLEN]{};
+	ZeroMemory(message, sizeof(message));
+	ZeroMemory(buffer, sizeof(message));
+	cout << "Enter message:";
+	cin.ignore();
+	cin.get(buffer, MAXSTRLEN);
+	sprintf(message, "%s: %s", username.c_str(), buffer);
 	SendData(message);
-
+	return message;
 }
